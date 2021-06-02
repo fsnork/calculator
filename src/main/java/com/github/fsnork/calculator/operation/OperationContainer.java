@@ -14,6 +14,7 @@ public class OperationContainer {
                 put(ADD.getOperationName(), new AddOp(prepareOperationService)).
                 put(SUBTRACT.getOperationName(), new SubtractOp(prepareOperationService)).
                 put(MULTIPLY.getOperationName(), new MultiplyOp(prepareOperationService)).
+                put(DIVIDE.getOperationName(), new DivideOp(prepareOperationService)).
                 build();
         unknownOp = new UnknownOp(prepareOperationService);
     }
