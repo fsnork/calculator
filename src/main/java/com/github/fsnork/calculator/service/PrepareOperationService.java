@@ -6,6 +6,7 @@ import com.github.fsnork.calculator.operation.PreparedOp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -25,8 +26,8 @@ public class PrepareOperationService {
         System.out.println("preparing op");
         PreparedOp preparedOp = null;
         String[] numbers = new String[2];
-        double number1;
-        double number2;
+        BigDecimal number1;
+        BigDecimal number2;
         input = input.replace("\"", "");
         Pattern pat= Pattern.compile("[-]?[0-9]+([.][0-9]+)?");
         Matcher matcher=pat.matcher(input);
@@ -41,16 +42,16 @@ public class PrepareOperationService {
         System.out.println(numbers[0]);
         System.out.println(numbers[1]);
         if (i == 1) {
-            number1 = Double.parseDouble(numbers[0]);
+            number1 = new BigDecimal(numbers[0]);
             opId = input.replace(numbers[0], "");
             System.out.println(opId);
             preparedOp = new PreparedOp(number1, operationContainer.retrieveOperation(opId));
         } else if (i == 2) {
-            number1 = Double.parseDouble(numbers[0]);
-            number2 = Double.parseDouble(numbers[1]);
+            number1 = new BigDecimal(numbers[0]);
+            number2 = new BigDecimal(numbers[1]);
             System.out.println("two numbers");
             opId = input.replace(numbers[0], "").replace(numbers[1], "");
-            if (number2 < 0 && opId.isEmpty()) {
+            if (number2.compareTo(new BigDecimal(0)) < 0 && opId.isEmpty()) {
                 opId = "+";
             }
             System.out.println(opId);

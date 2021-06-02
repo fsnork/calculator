@@ -2,6 +2,8 @@ package com.github.fsnork.calculator.operation;
 
 import com.github.fsnork.calculator.service.PrepareOperationService;
 
+import java.math.BigDecimal;
+
 public class SubtractOp implements Operation {
 
     private final PrepareOperationService prepareOperationService;
@@ -12,6 +14,7 @@ public class SubtractOp implements Operation {
 
     @Override
     public void execute(PreparedOp preparedOp) {
-        System.out.println(preparedOp.getNumber1() - preparedOp.getNumber2());
+        BigDecimal result = preparedOp.getNumber1().subtract(preparedOp.getNumber2());
+        System.out.println(result);
     }
 }

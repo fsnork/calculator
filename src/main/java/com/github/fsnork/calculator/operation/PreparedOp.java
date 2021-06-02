@@ -1,22 +1,24 @@
 package com.github.fsnork.calculator.operation;
 
+import java.math.BigDecimal;
+
 public class PreparedOp {
 
-    private Double number1;
-    private Double number2;
+    private BigDecimal number1;
+    private BigDecimal number2;
     private Operation operation;
 
-    public PreparedOp(Double number1, Double number2, Operation operation) {
+    public PreparedOp(BigDecimal number1, BigDecimal number2, Operation operation) {
         this.number1 = number1;
         this.number2 = number2;
         this.operation = operation;
     }
 
-    public Double getNumber1() {
+    public BigDecimal getNumber1() {
         return number1;
     }
 
-    public Double getNumber2() {
+    public BigDecimal getNumber2() {
         return number2;
     }
 
@@ -24,7 +26,7 @@ public class PreparedOp {
         return operation;
     }
 
-    public PreparedOp(Double number1, Operation operation) {
+    public PreparedOp(BigDecimal number1, Operation operation) {
         this.number1 = number1;
         this.operation = operation;
     }
