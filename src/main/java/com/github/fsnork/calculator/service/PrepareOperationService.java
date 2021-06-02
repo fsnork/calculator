@@ -25,7 +25,9 @@ public class PrepareOperationService {
         System.out.println("preparing op");
         PreparedOp preparedOp = null;
         String[] numbers = new String[2];
-        String operation;
+        double number1;
+        double number2;
+        input = input.replace("\"", "");
         Pattern pat= Pattern.compile("[-]?[0-9]+([.][0-9]+)?");
         Matcher matcher=pat.matcher(input);
         System.out.println("found " + matcher.groupCount());
@@ -39,19 +41,20 @@ public class PrepareOperationService {
         System.out.println(numbers[0]);
         System.out.println(numbers[1]);
         if (i == 1) {
-            operation = input.replace(numbers[0], "");
-            opId = operation;
-            System.out.println(operation);
-            preparedOp = new PreparedOp(Double.parseDouble(numbers[0]),
-                    operationContainer.retrieveOperation(operation));
+            number1 = Double.parseDouble(numbers[0]);
+            opId = input.replace(numbers[0], "");
+            System.out.println(opId);
+            preparedOp = new PreparedOp(number1, operationContainer.retrieveOperation(opId));
         } else if (i == 2) {
+            number1 = Double.parseDouble(numbers[0]);
+            number2 = Double.parseDouble(numbers[1]);
             System.out.println("two numbers");
-            operation = input.replace(numbers[0], "").replace(numbers[1], "");
-
-            opId = operation;
-            System.out.println(operation);
-            preparedOp = new PreparedOp(Double.parseDouble(numbers[0]), Double.parseDouble(numbers[1]),
-                    operationContainer.retrieveOperation(operation));
+            opId = input.replace(numbers[0], "").replace(numbers[1], "");
+            if (number2 < 0 && opId.isEmpty()) {
+                opId = "+";
+            }
+            System.out.println(opId);
+            preparedOp = new PreparedOp(number1, number2, operationContainer.retrieveOperation(opId));
         } else {
             System.out.println("Incorrect input.");
         }
