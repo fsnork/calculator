@@ -10,12 +10,13 @@ public class OperationContainer {
     private final Operation unknownOp;
 
     public OperationContainer(PrepareOperationService prepareOperationService) {
-        map = ImmutableMap.<String, Operation>builder().
-                put(ADD.getOperationName(), new AddOp(prepareOperationService)).
-                put(SUBTRACT.getOperationName(), new SubtractOp(prepareOperationService)).
-                put(MULTIPLY.getOperationName(), new MultiplyOp(prepareOperationService)).
-                put(DIVIDE.getOperationName(), new DivideOp(prepareOperationService)).
-                build();
+        map = ImmutableMap.<String, Operation>builder()
+                .put(ADD.getOperationName(), new AddOp(prepareOperationService))
+                .put(SUBTRACT.getOperationName(), new SubtractOp(prepareOperationService))
+                .put(MULTIPLY.getOperationName(), new MultiplyOp(prepareOperationService))
+                .put(DIVIDE.getOperationName(), new DivideOp(prepareOperationService))
+                .put(FACTORIAL.getOperationName(), new FactorialOp(prepareOperationService))
+                .build();
         unknownOp = new UnknownOp(prepareOperationService);
     }
 
