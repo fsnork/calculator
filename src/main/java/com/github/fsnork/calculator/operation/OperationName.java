@@ -7,7 +7,8 @@ public enum OperationName {
     MULTIPLY("*"),
     DIVIDE("/"),
     FACTORIAL("!"),
-    SQUARE("sq")
+    SQUARE("sq"),
+    DEGREE("^")
     ;
 
     private final String operationName;

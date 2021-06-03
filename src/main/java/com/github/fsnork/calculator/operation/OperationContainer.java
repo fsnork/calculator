@@ -6,6 +6,7 @@ import com.google.common.collect.ImmutableMap;
 import static com.github.fsnork.calculator.operation.OperationName.*;
 
 public class OperationContainer {
+
     private final ImmutableMap<String, Operation> map;
     private final Operation unknownOp;
 
@@ -16,6 +17,8 @@ public class OperationContainer {
                 .put(MULTIPLY.getOperationName(), new MultiplyOp(prepareOperationService))
                 .put(DIVIDE.getOperationName(), new DivideOp(prepareOperationService))
                 .put(FACTORIAL.getOperationName(), new FactorialOp(prepareOperationService))
+                .put(SQUARE.getOperationName(), new SquareOp(prepareOperationService))
+                .put(DEGREE.getOperationName(), new DegreeOp(prepareOperationService))
                 .build();
         unknownOp = new UnknownOp(prepareOperationService);
     }

@@ -65,4 +65,8 @@ public class PrepareOperationService {
     public String getOpId() {
         return opId;
     }
+
+    public boolean isInteger(BigDecimal number) {
+        return number.stripTrailingZeros().scale() <= 0;
+    }
 }
