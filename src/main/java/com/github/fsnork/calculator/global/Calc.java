@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Calc implements CommandLineRunner {
 
-    private static final String START_MESSAGE = "Calculator! Examples of input: \"2.3+4.55\"; \"56sq\"";
+    private static final String START_MESSAGE = "Calculator! Examples of input: \"2.3+4.55\"; \"56sq\"; \"[base]logn[number]\"";
     private final OperationContainer operationContainer;
 
     public Calc() {

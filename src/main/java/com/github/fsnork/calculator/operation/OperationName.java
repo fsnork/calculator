@@ -9,7 +9,8 @@ public enum OperationName {
     FACTORIAL("!"),
     SQUARE("sq"),
     DEGREE("^"),
-    LOGE("loge")
+    LOGE("loge"),
+    LOGN("logn")
     ;
 
     private final String operationName;

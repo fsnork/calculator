@@ -20,6 +20,7 @@ public class OperationContainer {
                 .put(SQUARE.getOperationName(), new SquareOp(prepareOperationService))
                 .put(DEGREE.getOperationName(), new DegreeOp(prepareOperationService))
                 .put(LOGE.getOperationName(), new LogEOp(prepareOperationService))
+                .put(LOGN.getOperationName(), new LogNOp(prepareOperationService))
                 .build();
         unknownOp = new UnknownOp(prepareOperationService);
     }
