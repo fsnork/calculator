@@ -8,7 +8,8 @@ public enum OperationName {
     DIVIDE("/"),
     FACTORIAL("!"),
     SQUARE("sq"),
-    DEGREE("^")
+    DEGREE("^"),
+    LOGE("loge")
     ;
 
     private final String operationName;

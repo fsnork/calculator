@@ -19,6 +19,7 @@ public class OperationContainer {
                 .put(FACTORIAL.getOperationName(), new FactorialOp(prepareOperationService))
                 .put(SQUARE.getOperationName(), new SquareOp(prepareOperationService))
                 .put(DEGREE.getOperationName(), new DegreeOp(prepareOperationService))
+                .put(LOGE.getOperationName(), new LogEOp(prepareOperationService))
                 .build();
         unknownOp = new UnknownOp(prepareOperationService);
     }

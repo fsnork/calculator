@@ -10,7 +10,6 @@ public class UnknownOp implements Operation {
         this.prepareOperationService = prepareOperationService;
     }
 
-
     public void execute(PreparedOp preparedOp) {
         System.out.println("There's no such operation :(");
     }
