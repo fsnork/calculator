@@ -10,7 +10,8 @@ public enum OperationName {
     SQUARE("sq"),
     DEGREE("^"),
     LOGE("loge"),
-    LOGN("logn")
+    LOGN("logn"),
+    ROOT("rt")
     ;
 
     private final String operationName;

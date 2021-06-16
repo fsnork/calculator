@@ -21,6 +21,7 @@ public class OperationContainer {
                 .put(DEGREE.getOperationName(), new DegreeOp(prepareOperationService))
                 .put(LOGE.getOperationName(), new LogEOp(prepareOperationService))
                 .put(LOGN.getOperationName(), new LogNOp(prepareOperationService))
+                .put(ROOT.getOperationName(), new RootOp(prepareOperationService))
                 .build();
         unknownOp = new UnknownOp(prepareOperationService);
     }

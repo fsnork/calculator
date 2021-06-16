@@ -13,7 +13,7 @@ public class AddOp implements Operation {
     }
 
     public void execute(PreparedOp preparedOp) {
-        BigDecimal result = preparedOp.getNumber1().add(preparedOp.getNumber2());
+        BigDecimal result = preparedOp.getNumber1().add(preparedOp.getNumber2()).stripTrailingZeros();
         System.out.println(result);
     }
 }

@@ -14,7 +14,7 @@ public class SubtractOp implements Operation {
 
     @Override
     public void execute(PreparedOp preparedOp) {
-        BigDecimal result = preparedOp.getNumber1().subtract(preparedOp.getNumber2());
+        BigDecimal result = preparedOp.getNumber1().subtract(preparedOp.getNumber2()).stripTrailingZeros();
         System.out.println(result);
     }
 }
