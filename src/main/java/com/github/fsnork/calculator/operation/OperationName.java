@@ -12,7 +12,8 @@ public enum OperationName {
     LOGE("loge"),
     LOGN("logn"),
     ROOT("rt"),
-    PERCENT("%")
+    PERCENT("%"),
+    EXPONENTA("e")
     ;
 
     private final String operationName;
