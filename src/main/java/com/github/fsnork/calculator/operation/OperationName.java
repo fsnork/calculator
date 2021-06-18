@@ -11,7 +11,8 @@ public enum OperationName {
     DEGREE("^"),
     LOGE("loge"),
     LOGN("logn"),
-    ROOT("rt")
+    ROOT("rt"),
+    PERCENT("%")
     ;
 
     private final String operationName;

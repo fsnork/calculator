@@ -22,6 +22,7 @@ public class OperationContainer {
                 .put(LOGE.getOperationName(), new LogEOp(prepareOperationService))
                 .put(LOGN.getOperationName(), new LogNOp(prepareOperationService))
                 .put(ROOT.getOperationName(), new RootOp(prepareOperationService))
+                .put(PERCENT.getOperationName(), new PercentOp(prepareOperationService))
                 .build();
         unknownOp = new UnknownOp(prepareOperationService);
     }
